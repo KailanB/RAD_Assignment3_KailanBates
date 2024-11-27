@@ -17,11 +17,6 @@ namespace Sodv2101_Assignment3TradingCards_KailanBates
             BindingList<Player> players = new BindingList<Player>();
 			//List<Player> players = new List<Player>();
 
-
-
-
-
-
 			// utilized chat GPT to help create sample data for this section
 			// ALL Images courtesy of getty images
 			players.Add(new Player
@@ -183,42 +178,6 @@ namespace Sodv2101_Assignment3TradingCards_KailanBates
 				// https://www.gettyimages.ca/search/2/image?phrase=devin+lloyd
 				Image = "..\\..\\..\\images\\DevinLloyd.jpg"
 			});
-
-
-
-
-
-
-
-
-
-
-
-
-			//         player = new Player
-			//         {
-			//             Id = 2,
-			//             Name = "ScramBiss",
-			//             Team = "Away",
-			//	TeamColorR = 0,
-			//	TeamColorG = 150,
-			//	TeamColorB = 75
-			//};
-			//         players.Add(player);
-
-
-			//         player = new Player
-			//         {
-			//             Id = 3,
-			//             Name = "Fluff Bucket",
-			//             Team = "Kebabs",
-			//	TeamColorR = 150,
-			//	TeamColorG = 0,
-			//	TeamColorB = 150
-			//};
-			//         players.Add(player);
-
-
 
 			return players;
 

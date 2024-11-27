@@ -1,6 +1,6 @@
 ﻿namespace Sodv2101_Assignment3TradingCards_KailanBates
 {
-	partial class CreatePlayerForm
+	partial class EditPlayerForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,9 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			lblError = new Label();
-			btnAddImg = new Button();
-			picPlayer = new PictureBox();
 			groupBox2 = new GroupBox();
 			numSoloTackles = new NumericUpDown();
 			numTotalTackles = new NumericUpDown();
@@ -52,8 +49,10 @@
 			txtTeamName = new TextBox();
 			txtPlayerName = new TextBox();
 			btnCancel = new Button();
-			btnAdd = new Button();
-			((System.ComponentModel.ISupportInitialize)picPlayer).BeginInit();
+			btnEdit = new Button();
+			picPlayer = new PictureBox();
+			btnAddImg = new Button();
+			lblError = new Label();
 			groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)numSoloTackles).BeginInit();
 			((System.ComponentModel.ISupportInitialize)numTotalTackles).BeginInit();
@@ -63,35 +62,8 @@
 			((System.ComponentModel.ISupportInitialize)numGreen).BeginInit();
 			((System.ComponentModel.ISupportInitialize)numRed).BeginInit();
 			((System.ComponentModel.ISupportInitialize)numBlue).BeginInit();
+			((System.ComponentModel.ISupportInitialize)picPlayer).BeginInit();
 			SuspendLayout();
-			// 
-			// lblError
-			// 
-			lblError.AutoSize = true;
-			lblError.ForeColor = Color.Red;
-			lblError.Location = new Point(207, 519);
-			lblError.Name = "lblError";
-			lblError.Size = new Size(0, 15);
-			lblError.TabIndex = 41;
-			// 
-			// btnAddImg
-			// 
-			btnAddImg.Location = new Point(12, 265);
-			btnAddImg.Name = "btnAddImg";
-			btnAddImg.Size = new Size(92, 23);
-			btnAddImg.TabIndex = 40;
-			btnAddImg.Text = "Add Image";
-			btnAddImg.UseVisualStyleBackColor = true;
-			btnAddImg.Click += btnAddImg_Click;
-			// 
-			// picPlayer
-			// 
-			picPlayer.Location = new Point(164, 265);
-			picPlayer.Name = "picPlayer";
-			picPlayer.Size = new Size(306, 204);
-			picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
-			picPlayer.TabIndex = 39;
-			picPlayer.TabStop = false;
 			// 
 			// groupBox2
 			// 
@@ -103,10 +75,10 @@
 			groupBox2.Controls.Add(label8);
 			groupBox2.Controls.Add(label7);
 			groupBox2.Controls.Add(label3);
-			groupBox2.Location = new Point(252, 99);
+			groupBox2.Location = new Point(252, 101);
 			groupBox2.Name = "groupBox2";
 			groupBox2.Size = new Size(218, 149);
-			groupBox2.TabIndex = 38;
+			groupBox2.TabIndex = 27;
 			groupBox2.TabStop = false;
 			groupBox2.Text = "groupBox2";
 			// 
@@ -186,10 +158,10 @@
 			groupBox1.Controls.Add(numBlue);
 			groupBox1.Controls.Add(label5);
 			groupBox1.Controls.Add(label4);
-			groupBox1.Location = new Point(12, 99);
+			groupBox1.Location = new Point(12, 101);
 			groupBox1.Name = "groupBox1";
 			groupBox1.Size = new Size(218, 149);
-			groupBox1.TabIndex = 37;
+			groupBox1.TabIndex = 26;
 			groupBox1.TabStop = false;
 			groupBox1.Text = "Team Color RGB";
 			// 
@@ -247,59 +219,87 @@
 			// label2
 			// 
 			label2.AutoSize = true;
-			label2.Location = new Point(12, 50);
+			label2.Location = new Point(12, 52);
 			label2.Name = "label2";
 			label2.Size = new Size(70, 15);
-			label2.TabIndex = 36;
+			label2.TabIndex = 25;
 			label2.Text = "Team Name";
 			// 
 			// label1
 			// 
 			label1.AutoSize = true;
-			label1.Location = new Point(12, 12);
+			label1.Location = new Point(12, 14);
 			label1.Name = "label1";
 			label1.Size = new Size(74, 15);
-			label1.TabIndex = 35;
+			label1.TabIndex = 24;
 			label1.Text = "Player Name";
 			// 
 			// txtTeamName
 			// 
-			txtTeamName.Location = new Point(108, 47);
+			txtTeamName.Location = new Point(108, 49);
 			txtTeamName.Name = "txtTeamName";
 			txtTeamName.Size = new Size(163, 23);
-			txtTeamName.TabIndex = 34;
+			txtTeamName.TabIndex = 23;
 			// 
 			// txtPlayerName
 			// 
-			txtPlayerName.Location = new Point(108, 9);
+			txtPlayerName.Location = new Point(108, 11);
 			txtPlayerName.Name = "txtPlayerName";
 			txtPlayerName.Size = new Size(163, 23);
-			txtPlayerName.TabIndex = 33;
+			txtPlayerName.TabIndex = 22;
 			// 
 			// btnCancel
 			// 
-			btnCancel.Location = new Point(12, 481);
+			btnCancel.Location = new Point(12, 483);
 			btnCancel.Name = "btnCancel";
 			btnCancel.Size = new Size(75, 23);
-			btnCancel.TabIndex = 32;
+			btnCancel.TabIndex = 21;
 			btnCancel.Text = "Cancel";
 			btnCancel.UseVisualStyleBackColor = true;
 			// 
-			// btnAdd
+			// btnEdit
 			// 
-			btnAdd.Location = new Point(353, 481);
-			btnAdd.Name = "btnAdd";
-			btnAdd.Size = new Size(117, 23);
-			btnAdd.TabIndex = 31;
-			btnAdd.Text = "Add Player";
-			btnAdd.UseVisualStyleBackColor = true;
-			btnAdd.Click += btnAdd_Click;
+			btnEdit.Location = new Point(353, 483);
+			btnEdit.Name = "btnEdit";
+			btnEdit.Size = new Size(117, 23);
+			btnEdit.TabIndex = 20;
+			btnEdit.Text = "Edit Player";
+			btnEdit.UseVisualStyleBackColor = true;
+			btnEdit.Click += btnEdit_Click;
 			// 
-			// CreatePlayerForm
+			// picPlayer
+			// 
+			picPlayer.Location = new Point(164, 267);
+			picPlayer.Name = "picPlayer";
+			picPlayer.Size = new Size(306, 204);
+			picPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
+			picPlayer.TabIndex = 28;
+			picPlayer.TabStop = false;
+			// 
+			// btnAddImg
+			// 
+			btnAddImg.Location = new Point(12, 267);
+			btnAddImg.Name = "btnAddImg";
+			btnAddImg.Size = new Size(92, 23);
+			btnAddImg.TabIndex = 29;
+			btnAddImg.Text = "Add Image";
+			btnAddImg.UseVisualStyleBackColor = true;
+			btnAddImg.Click += btnAddImg_Click;
+			// 
+			// lblError
+			// 
+			lblError.AutoSize = true;
+			lblError.ForeColor = Color.Red;
+			lblError.Location = new Point(188, 529);
+			lblError.Name = "lblError";
+			lblError.Size = new Size(0, 15);
+			lblError.TabIndex = 30;
+			// 
+			// EditPlayerForm
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(498, 540);
+			ClientSize = new Size(487, 553);
 			Controls.Add(lblError);
 			Controls.Add(btnAddImg);
 			Controls.Add(picPlayer);
@@ -310,10 +310,9 @@
 			Controls.Add(txtTeamName);
 			Controls.Add(txtPlayerName);
 			Controls.Add(btnCancel);
-			Controls.Add(btnAdd);
-			Name = "CreatePlayerForm";
-			Text = "CreatePlayerForm";
-			((System.ComponentModel.ISupportInitialize)picPlayer).EndInit();
+			Controls.Add(btnEdit);
+			Name = "EditPlayerForm";
+			Text = "EditPlayerForm";
 			groupBox2.ResumeLayout(false);
 			groupBox2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)numSoloTackles).EndInit();
@@ -325,15 +324,12 @@
 			((System.ComponentModel.ISupportInitialize)numGreen).EndInit();
 			((System.ComponentModel.ISupportInitialize)numRed).EndInit();
 			((System.ComponentModel.ISupportInitialize)numBlue).EndInit();
+			((System.ComponentModel.ISupportInitialize)picPlayer).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
 
 		#endregion
-
-		private Label lblError;
-		private Button btnAddImg;
-		private PictureBox picPlayer;
 		private GroupBox groupBox2;
 		private NumericUpDown numSoloTackles;
 		private NumericUpDown numTotalTackles;
@@ -355,6 +351,9 @@
 		private TextBox txtTeamName;
 		private TextBox txtPlayerName;
 		private Button btnCancel;
-		private Button btnAdd;
+		private Button btnEdit;
+		private PictureBox picPlayer;
+		private Button btnAddImg;
+		private Label lblError;
 	}
 }

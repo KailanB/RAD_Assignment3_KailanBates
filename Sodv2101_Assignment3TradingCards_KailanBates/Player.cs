@@ -23,9 +23,6 @@ namespace Sodv2101_Assignment3TradingCards_KailanBates
 		private int _soloTackles;
 		private string _image;
 
-
-
-
 		public int Id { get; set; }
 		public string Name 
 		{ 

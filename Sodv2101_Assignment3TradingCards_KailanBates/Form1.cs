@@ -11,7 +11,7 @@ namespace Sodv2101_Assignment3TradingCards_KailanBates
 
 		Rectangle PlayerCardArea = new Rectangle(350, 15, 400, 475);
 		Rectangle PlayerBorderRectangle = new Rectangle(375, 35, 350, 450);
-		private int red = 255;
+		private int red;
 		private int green;
 		private int blue;
 
@@ -86,11 +86,13 @@ namespace Sodv2101_Assignment3TradingCards_KailanBates
 				lblSoloTackles.DataBindings.Add("Text", player, "SoloTackles", true, DataSourceUpdateMode.OnPropertyChanged);
 
 				picBoxPlayer.ImageLocation = player.Image;
-
+				
+				// update colors used in player border color
 				red = player.TeamColorR;
 				green = player.TeamColorG;
 				blue = player.TeamColorB;
 
+				// update player card area with new color
 				this.Invalidate(PlayerCardArea);
 			}
 
@@ -138,30 +140,27 @@ namespace Sodv2101_Assignment3TradingCards_KailanBates
 				int playerId = Convert.ToInt32(dataGridPlayers.SelectedRows[0].Cells["ID"].Value);
 				var player = players.Where(p => p.Id == playerId).SingleOrDefault();
 
-				CreatePlayerForm createPlayerForm = new CreatePlayerForm();
-
-
-				createPlayerForm.ChangeBtnName("Update Player");
-				DialogResult result = createPlayerForm.ShowDialog();
+				EditPlayerForm editPlayerForm = new EditPlayerForm();
+				editPlayerForm.PopulateCurrentPlayer(player);
+				DialogResult result = editPlayerForm.ShowDialog();
 				if (result == DialogResult.OK)
 				{
 
-					Player updatedPlayer = createPlayerForm.GetPlayer();
-
 					foreach (Player p in players)
 					{
+						// find correct player in the data list and update properties
 						if (p.Id == playerId)
 						{
-							p.Name = updatedPlayer.Name;
-							p.Team = updatedPlayer.Team;
-							p.TeamColorR = updatedPlayer.TeamColorR;
-							p.TeamColorG = updatedPlayer.TeamColorG;
-							p.TeamColorB = updatedPlayer.TeamColorB;
-							p.Interceptions = updatedPlayer.Interceptions;
-							p.PassesDefended = updatedPlayer.PassesDefended;
-							p.TotalTackles = updatedPlayer.TotalTackles;
-							p.SoloTackles = updatedPlayer.SoloTackles;
-							p.Image = updatedPlayer.Image;
+							p.Name = editPlayerForm.Name;
+							p.Team = editPlayerForm.Team;
+							p.TeamColorR = editPlayerForm.TeamColorR;
+							p.TeamColorG = editPlayerForm.TeamColorG;
+							p.TeamColorB = editPlayerForm.TeamColorB;
+							p.Interceptions = editPlayerForm.Interceptions;
+							p.PassesDefended = editPlayerForm.PassesDefended;
+							p.TotalTackles = editPlayerForm.TotalTackles;
+							p.SoloTackles = editPlayerForm.SoloTackles;
+							p.Image = editPlayerForm.Image;
 						}
 					}
 				}

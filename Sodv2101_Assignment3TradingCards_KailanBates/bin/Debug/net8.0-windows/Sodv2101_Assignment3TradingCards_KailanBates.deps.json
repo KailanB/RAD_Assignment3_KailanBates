@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Sodv2101_Assignment3TradingCards_KailanBates/1.0.0": {
+        "runtime": {
+          "Sodv2101_Assignment3TradingCards_KailanBates.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Sodv2101_Assignment3TradingCards_KailanBates/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

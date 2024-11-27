@@ -35,7 +35,9 @@ namespace Sodv2101_Assignment3TradingCards_KailanBates
 			numTotalTackles.DataBindings.Add("Text", _player, "TotalTackles", true, DataSourceUpdateMode.OnPropertyChanged);
 			numSoloTackles.DataBindings.Add("Text", _player, "SoloTackles", true, DataSourceUpdateMode.OnPropertyChanged);
 
-			txtImgName.DataBindings.Add("Text", _player, "Image", true, DataSourceUpdateMode.OnPropertyChanged);
+			//picPlayer.DataBindings.Add("Text", _player, "Image", true, DataSourceUpdateMode.OnPropertyChanged);
+
+			// txtPlayerName.Text = "Test";
 
 			//_player.PropertyChanged += OnPropChange;
 
@@ -48,6 +50,8 @@ namespace Sodv2101_Assignment3TradingCards_KailanBates
 
 				this.DialogResult = DialogResult.OK;
 				this.Close();
+				// Add open file dialog for adding image 
+				// then get file path that way
 
 			}
 			else
@@ -56,16 +60,20 @@ namespace Sodv2101_Assignment3TradingCards_KailanBates
 			}
 		}
 
-		public void ChangeBtnName(string newName)
-		{
-			btnAdd.Text = newName;
-		}
-
 		public Player GetPlayer()
 		{
 
 			return _player;
 		}
 
+		private void btnAddImg_Click(object sender, EventArgs e)
+		{
+			OpenFileDialog ofd = new OpenFileDialog();
+			if (ofd.ShowDialog() == DialogResult.OK)
+			{
+				picPlayer.ImageLocation = ofd.FileName;
+				_player.Image = ofd.FileName;
+			}
+		}
 	}
 }
