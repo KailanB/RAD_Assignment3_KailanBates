@@ -22,7 +22,7 @@ namespace Sodv2101_Assignment3_KB
 
 			_player = new Player();
 
-
+			// bind input fields to _player object properties
 			txtPlayerName.DataBindings.Add("Text", _player, "Name", true, DataSourceUpdateMode.OnPropertyChanged);
 			txtTeamName.DataBindings.Add("Text", _player, "Team", true, DataSourceUpdateMode.OnPropertyChanged);
 
@@ -35,12 +35,6 @@ namespace Sodv2101_Assignment3_KB
 			numTotalTackles.DataBindings.Add("Text", _player, "TotalTackles", true, DataSourceUpdateMode.OnPropertyChanged);
 			numSoloTackles.DataBindings.Add("Text", _player, "SoloTackles", true, DataSourceUpdateMode.OnPropertyChanged);
 
-			//picPlayer.DataBindings.Add("Text", _player, "Image", true, DataSourceUpdateMode.OnPropertyChanged);
-
-			// txtPlayerName.Text = "Test";
-
-			//_player.PropertyChanged += OnPropChange;
-
 		}
 
 		private void btnAdd_Click(object sender, EventArgs e)
@@ -50,8 +44,6 @@ namespace Sodv2101_Assignment3_KB
 
 				this.DialogResult = DialogResult.OK;
 				this.Close();
-				// Add open file dialog for adding image 
-				// then get file path that way
 
 			}
 			else
@@ -72,6 +64,8 @@ namespace Sodv2101_Assignment3_KB
 			if (ofd.ShowDialog() == DialogResult.OK)
 			{
 				picPlayer.ImageLocation = ofd.FileName;
+				// update player image path via ofd.FileName.
+				// I tried toing this via databinding however could not get it to work
 				_player.Image = ofd.FileName;
 			}
 		}

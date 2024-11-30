@@ -31,8 +31,10 @@ namespace Sodv2101_Assignment3_KB
 		// used to populate player list and initially display the table
 		private void LoadData()
 		{
+			// pull initial player data
 			players = new BindingList<Player>(PlayerData.GetPlayers());
 
+			// create table with basic player details
 			DataTable table = new DataTable();
 			table.Columns.Add("Name", typeof(string));
 			table.Columns.Add("Team", typeof(string));
@@ -41,6 +43,7 @@ namespace Sodv2101_Assignment3_KB
 			{
 				table.Rows.Add(player.Name, player.Team, player.Id);
 			}
+			// bind table to dataGrid
 			dataGridPlayers.DataSource = table;
 			dataGridPlayers.SelectionChanged += DataGrid_PlayerSelected;
 			//dataGridPlayerStats.DataSource = dataGridPlayers.SelectedRows[0];
@@ -66,6 +69,7 @@ namespace Sodv2101_Assignment3_KB
 		{
 			if (dataGridPlayers.SelectedRows.Count > 0 && dataGridPlayers.SelectedRows.Count < 2)
 			{
+				// remove all prior bindings
 				lblName.DataBindings.Clear();
 				lblTeam.DataBindings.Clear();
 				lblInterceptions.DataBindings.Clear();
@@ -73,10 +77,11 @@ namespace Sodv2101_Assignment3_KB
 				lblTotalTackles.DataBindings.Clear();
 				lblSoloTackles.DataBindings.Clear();
 
+				// Find selected player in the list via ID
 				int playerId = Convert.ToInt32(dataGridPlayers.SelectedRows[0].Cells["ID"].Value);
 				var player = players.Where(p => p.Id == playerId).SingleOrDefault();
 
-
+				// create new bindings in the card view with all player details
 				lblName.DataBindings.Add("Text", player, "Name", true, DataSourceUpdateMode.OnPropertyChanged);
 				lblTeam.DataBindings.Add("Text", player, "Team", true, DataSourceUpdateMode.OnPropertyChanged);
 
