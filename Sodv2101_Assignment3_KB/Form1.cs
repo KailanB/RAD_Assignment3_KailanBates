@@ -108,6 +108,7 @@ namespace Sodv2101_Assignment3_KB
 		{
 			Graphics g = e.Graphics;
 
+			// update border color based on selected player
 			using (Pen pen = new Pen(Color.FromArgb(red, green, blue), 5))
 			{
 				g.DrawRectangle(pen, PlayerBorderRectangle);
@@ -151,23 +152,16 @@ namespace Sodv2101_Assignment3_KB
 				if (result == DialogResult.OK)
 				{
 
-					foreach (Player p in players)
-					{
-						// find correct player in the data list and update properties
-						if (p.Id == playerId)
-						{
-							p.Name = editPlayerForm.Name;
-							p.Team = editPlayerForm.Team;
-							p.TeamColorR = editPlayerForm.TeamColorR;
-							p.TeamColorG = editPlayerForm.TeamColorG;
-							p.TeamColorB = editPlayerForm.TeamColorB;
-							p.Interceptions = editPlayerForm.Interceptions;
-							p.PassesDefended = editPlayerForm.PassesDefended;
-							p.TotalTackles = editPlayerForm.TotalTackles;
-							p.SoloTackles = editPlayerForm.SoloTackles;
-							p.Image = editPlayerForm.Image;
-						}
-					}
+					player.Name = editPlayerForm.PlayerName;
+					player.Team = editPlayerForm.Team;
+					player.TeamColorR = editPlayerForm.TeamColorR;
+					player.TeamColorG = editPlayerForm.TeamColorG;
+					player.TeamColorB = editPlayerForm.TeamColorB;
+					player.Interceptions = editPlayerForm.Interceptions;
+					player.PassesDefended = editPlayerForm.PassesDefended;
+					player.TotalTackles = editPlayerForm.TotalTackles;
+					player.SoloTackles = editPlayerForm.SoloTackles;
+					player.Image = editPlayerForm.Image;
 				}
 			}
 		}

@@ -13,16 +13,16 @@ namespace Sodv2101_Assignment3_KB
 	public partial class EditPlayerForm : Form
 	{
 
-		public string Name;
-		public string Team;
-		public int TeamColorR;
-		public int TeamColorG;
-		public int TeamColorB;
-		public int Interceptions;
-		public int PassesDefended;
-		public int TotalTackles;
-		public int SoloTackles;
-		public string Image;
+		public string PlayerName { get; set; }
+		public string Team { get; set; }
+		public int TeamColorR { get; set; }
+		public int TeamColorG { get; set; }
+		public int TeamColorB { get; set; }
+		public int Interceptions { get; set; }
+		public int PassesDefended { get; set; }
+		public int TotalTackles { get; set; }
+		public int SoloTackles { get; set; }
+		public string Image { get; set; }
 
 
 
@@ -35,7 +35,7 @@ namespace Sodv2101_Assignment3_KB
 		{
 			if (txtPlayerName.Text != "" && txtTeamName.Text != "")
 			{
-				Name = txtPlayerName.Text;
+				PlayerName = txtPlayerName.Text;
 				Team = txtTeamName.Text;
 				TeamColorR = (Int32)numRed.Value;
 				TeamColorG = (Int32)numGreen.Value;
@@ -47,15 +47,13 @@ namespace Sodv2101_Assignment3_KB
 
 				this.DialogResult = DialogResult.OK;
 				this.Close();
-				// Add open file dialog for adding image 
-				// then get file path that way
-
 			}
 			else
 			{
 				lblError.Text = "Please provide player name and Team name";
 			}
 		}
+		// used to pre populate the edit form with current player details
 		public void PopulateCurrentPlayer(Player player)
 		{
 			txtPlayerName.Text = player.Name;

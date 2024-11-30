@@ -86,18 +86,16 @@
 			lblName.AutoSize = true;
 			lblName.Location = new Point(541, 50);
 			lblName.Name = "lblName";
-			lblName.Size = new Size(10, 15);
+			lblName.Size = new Size(0, 15);
 			lblName.TabIndex = 6;
-			lblName.Text = ".";
 			// 
 			// lblTeam
 			// 
 			lblTeam.AutoSize = true;
 			lblTeam.Location = new Point(541, 79);
 			lblTeam.Name = "lblTeam";
-			lblTeam.Size = new Size(10, 15);
+			lblTeam.Size = new Size(0, 15);
 			lblTeam.TabIndex = 7;
-			lblTeam.Text = ".";
 			// 
 			// btnEdit
 			// 
@@ -169,36 +167,32 @@
 			lblSoloTackles.AutoSize = true;
 			lblSoloTackles.Location = new Point(139, 94);
 			lblSoloTackles.Name = "lblSoloTackles";
-			lblSoloTackles.Size = new Size(10, 15);
+			lblSoloTackles.Size = new Size(0, 15);
 			lblSoloTackles.TabIndex = 7;
-			lblSoloTackles.Text = ".";
 			// 
 			// lblTotalTackles
 			// 
 			lblTotalTackles.AutoSize = true;
 			lblTotalTackles.Location = new Point(139, 68);
 			lblTotalTackles.Name = "lblTotalTackles";
-			lblTotalTackles.Size = new Size(10, 15);
+			lblTotalTackles.Size = new Size(0, 15);
 			lblTotalTackles.TabIndex = 6;
-			lblTotalTackles.Text = ".";
 			// 
 			// lblPassesDefended
 			// 
 			lblPassesDefended.AutoSize = true;
 			lblPassesDefended.Location = new Point(139, 43);
 			lblPassesDefended.Name = "lblPassesDefended";
-			lblPassesDefended.Size = new Size(10, 15);
+			lblPassesDefended.Size = new Size(0, 15);
 			lblPassesDefended.TabIndex = 5;
-			lblPassesDefended.Text = ".";
 			// 
 			// lblInterceptions
 			// 
 			lblInterceptions.AutoSize = true;
 			lblInterceptions.Location = new Point(139, 19);
 			lblInterceptions.Name = "lblInterceptions";
-			lblInterceptions.Size = new Size(10, 15);
+			lblInterceptions.Size = new Size(0, 15);
 			lblInterceptions.TabIndex = 4;
-			lblInterceptions.Text = ".";
 			// 
 			// label8
 			// 
